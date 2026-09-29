@@ -1,6 +1,6 @@
 # Experimentos de tradução com T5
 
-[Voltar ao README principal](../../README.md)
+[Voltar ao README principal](../../../README.md)
 
 Notebooks de inferência com `T5ForConditionalGeneration` e `T5Tokenizer`. A classe `MultilingualTranslator` monta um prefixo de tarefa, tokeniza a entrada e gera traduções com um checkpoint pré-treinado. O código seleciona CUDA quando disponível, com CPU como alternativa.
 
@@ -11,7 +11,7 @@ Notebooks de inferência com `T5ForConditionalGeneration` e `T5Tokenizer`. A cla
 
 ## Preparação
 
-Siga o [guia de execução](../../docs/EXECUCAO.md). Os notebooks usam `torch`, `transformers` e tokenização T5 com `sentencepiece`; o alternativo também importa `sacrebleu`. Execute as células em ordem, com acesso ao modelo externo ou cache preparado.
+Siga o [guia de execução](../../../docs/EXECUCAO.md). Os notebooks usam `torch`, `transformers` e tokenização T5 com `sentencepiece`; o alternativo também importa `sacrebleu`. Execute as células em ordem, com acesso ao modelo externo ou cache preparado.
 
 As versões ainda não estão fixadas. A configuração de geração com grupos de beams precisa ser verificada no ambiente escolhido. Entradas são truncadas em até 512 tokens na implementação alternativa; documentos maiores exigem uma estratégia explícita de segmentação.
 

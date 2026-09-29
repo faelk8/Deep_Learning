@@ -13,7 +13,7 @@ Integra o [portfólio](https://faelk8.github.io/rafael_io/), mantido no [rafael_
 | Representações de linguagem | [Vetores contextuais com BERT](PyTorch/vetor/README.md) | Similaridade, mudanças entre camadas, desambiguação e atenção |
 | Previsão de séries temporais | [Consumo de energia](0002.01-Energia_Prophet_LSTM_GRU.ipynb) | Exploração de sazonalidade e abordagens Prophet, LSTM e GRU |
 | Perguntas e respostas | [Experimentos com DistilBERT](PyTorch/DistilBERT/) | Inferência, comparação com BERT e notebook de ajuste com SQuAD |
-| Geração de texto | [Tradução com T5](PyTorch/tradutor/README.md) | Candidatos de tradução, configuração de geração e exemplo de BLEU |
+| Geração de texto | [Tradução com T5](PyTorch/vetor/tradutor/README.md) | Candidatos de tradução, configuração de geração e exemplo de BLEU |
 | Redes neurais clássicas | [Exemplos com Keras](Keras/README.md) | MLP, CNN e LSTM em datasets didáticos |
 
 ## Mapa dos experimentos
@@ -27,7 +27,7 @@ Integra o [portfólio](https://faelk8.github.io/rafael_io/), mantido no [rafael_
 | Classificação de texto | [Detecção de sarcasmo](Tensorflow/DetectandoSarcasmo-main/Detectando-Sarcasmo.ipynb) | Tokenização, sequências e treinamento com manchetes rotuladas |
 | Atenção | [Notebooks de atenção](PyTorch/atencao/) | Implementações didáticas com tensores e módulos PyTorch |
 | Grafos | [Rede convolucional em grafos](PyTorch/graph/01.01-graph.ipynb) | Exemplo com PyTorch Geometric e visualização com NetworkX |
-| NLP com Transformers | [Tokenização](PyTorch/token/), [DistilBERT](PyTorch/DistilBERT/) e [T5](PyTorch/tradutor/) | Classes de modelos, inferência e experimentos de ajuste/geração |
+| NLP com Transformers | [Tokenização](PyTorch/token/), [DistilBERT](PyTorch/DistilBERT/) e [T5](PyTorch/vetor/tradutor/) | Classes de modelos, inferência e experimentos de ajuste/geração |
 | Representações contextuais | [Vetores](PyTorch/vetor/) e [palavras-chave e resumo](PyTorch/palavras-chave/) | BERT, similaridade de cosseno e seleção extrativa de conteúdo |
 
 A organização por framework é histórica: alguns notebooks combinam bibliotecas. A pasta não define um ambiente isolado de execução.
