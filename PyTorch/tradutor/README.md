@@ -1,26 +1,24 @@
-# 🌍 T5 Translation Model
+# Experimentos de tradução com T5
 
-Este repositório apresenta uma aplicação do modelo T5 (Text-to-Text Transfer Transformer) para tarefas de tradução automática entre idiomas. O T5 é um modelo poderoso desenvolvido pela equipe do Google Research, unificando diversas tarefas de NLP sob o mesmo paradigma: tudo é tratado como um problema de texto-para-texto.
+[Voltar ao README principal](../../README.md)
 
-## 📚 Sobre o Modelo
+Notebooks de inferência com `T5ForConditionalGeneration` e `T5Tokenizer`. A classe `MultilingualTranslator` monta um prefixo de tarefa, tokeniza a entrada e gera traduções com um checkpoint pré-treinado. O código seleciona CUDA quando disponível, com CPU como alternativa.
 
-O T5 foi treinado em uma grande variedade de tarefas de linguagem usando o dataset C4 ("Colossal Clean Crawled Corpus") e pode ser ajustado para tarefas específicas como tradução, resumo, classificação, entre outros.
+| Notebook | Escopo |
+| --- | --- |
+| [01.01-t5.ipynb](01.01-t5.ipynb) | Exemplos inglês → francês, inglês → alemão e espanhol → inglês |
+| [01.02-t5_alternativa.ipynb](01.02-t5_alternativa.ipynb) | Geração de múltiplos candidatos com `t5-base`, scores de sequência e cálculo de BLEU contra uma referência em francês |
 
-No contexto de **tradução**, o modelo é ajustado para tarefas como:
+## Preparação
 
-- Tradução de inglês para português
-- Tradução de português para inglês
-- Suporte a múltiplos idiomas (dependendo da variante do modelo utilizada)
+Siga o [guia de execução](../../docs/EXECUCAO.md). Os notebooks usam `torch`, `transformers` e tokenização T5 com `sentencepiece`; o alternativo também importa `sacrebleu`. Execute as células em ordem, com acesso ao modelo externo ou cache preparado.
 
----
+As versões ainda não estão fixadas. A configuração de geração com grupos de beams precisa ser verificada no ambiente escolhido. Entradas são truncadas em até 512 tokens na implementação alternativa; documentos maiores exigem uma estratégia explícita de segmentação.
 
-## 🚀 Instalação
+## Avaliação e escopo
 
-Recomenda-se o uso de Python 3.8+.
+A lista de idiomas aceita pela classe inclui português, mas isso apenas valida um argumento. Os exemplos não estabelecem qualidade para todos os pares aceitos, e não há treinamento de um tradutor português ↔ inglês nestes notebooks.
 
-1. Clone este repositório:
-```bash
-git clone https://github.com/seu-usuario/t5-traducao.git
-cd t5-traducao
+Scores de sequência ajudam a ordenar candidatos e não equivalem à probabilidade de uma tradução estar correta. O BLEU calculado sobre um único trecho demonstra o uso da métrica; uma avaliação de qualidade requer um conjunto maior de referências, pares de idiomas definidos e análise de erros.
 
-```
+O primeiro notebook registra a referência [Implementing Multilingual Translation with T5 and Transformers](https://machinelearningmastery.com/implementing-multilingual-translation-with-t5-and-transformers/).
